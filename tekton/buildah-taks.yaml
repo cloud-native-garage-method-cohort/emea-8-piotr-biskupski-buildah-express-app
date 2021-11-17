@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  name: buildah-build-my-repo
+spec:
+  taskRef:
+    name: buildah
+  params:
+  - name: IMAGE
+    value: github.com/cloud-native-garage-method-cohort/emea-8-piotr-biskupski-buildah-express-app
+  workspaces:
+  - name: source
+    persistentVolumeClaim:
+      claimName: my-source

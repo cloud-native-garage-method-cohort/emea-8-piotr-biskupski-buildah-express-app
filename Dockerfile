@@ -1,6 +1,6 @@
 FROM quay.io/ibmgaragecloud/node:lts-stretch
 
-COPY package*.json .
+COPY . .
 RUN npm ci
 
 COPY . .
